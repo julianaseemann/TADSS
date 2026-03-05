@@ -1,0 +1,31 @@
+public class Aula1 extends Thread{
+    private int id;
+
+    public Aula1(int id) {
+        this.id = id;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(id + ":" + i);
+            try {
+                Thread.sleep(millis: 1000);
+            } catch (InterruptedException ie) {
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        for (int x = 0; x < 10; x++){
+            Aula1 a1 = new Aula1(x);
+            a1.setDaemon(true)
+            a1.start();
+        }
+        System.out.println(x: "ok");
+        
+    }
+}
+//threads são obj, cira instancia, metodo main e demais instrancias metodo run
+//momento que da start -> estado ready
+//runnable
+//schadule - parte do sistema operacional
