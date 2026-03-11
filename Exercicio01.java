@@ -1,28 +1,23 @@
 // Faça um programa concorrente que crie 10 threads que exibam o nome da thread e a hora atual
 
-public class Exercicio01 extends Thread {
-    private int id;
+import java.time.LocalTime;
 
-    public Exercicio01(int id) {
-        this.id = id;
+public class Exercicio01 extends Thread {
+    public Exercicio01(String name) {
+        super(name);
     }
 
+    @Override
     public void run() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(id + ":" + i);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ie) {
-            }
-        }
+        // imprime nome da thread e hora atual
+        System.out.println(getName() + " - " + LocalTime.now());
     }
 
     public static void main(String[] args) {
-        for (int x = 0; x < 10; x++) {
-            Exercicio01 ex1 = new Exercicio01(x);
-            ex1.setDaemon(true);
-            ex1.start();
+        // cria e inicia 10 threads
+        for (int i = 0; i < 10; i++) {
+            Exercicio01 t = new Exercicio01("Thread-" + i);
+            t.start();
         }
-        System.out.println("ok");
     }
 }
