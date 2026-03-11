@@ -25,7 +25,9 @@ public class Aula1 extends Thread{
         
     }
 }
-//threads são obj, cira instancia, metodo main e demais instrancias metodo run
+//threads são obj, 
+//cira instancia, 
+// metodo main e demais instrancias metodo run
 //momento que da start -> estado ready
 //runnable
 //schadule - parte do sistema operacional
