@@ -1,5 +1,9 @@
 # TADSS
 
+Heap - onde fica os objetos
+Thread sleep - fica em outro estado por um determinado tempo e depois vai para ready
+    unico jeito de ir para reunning é com o schadule 
+
 ## Partes:
 Theads
 - CPU
