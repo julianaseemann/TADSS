@@ -1,21 +1,21 @@
 package Exercicio04;
 
 import java.util.List;
-import java.util.Random;
 
-public class Incluir extends Thread {
+public class Remove extends Thread {
     private List<Integer> numeros;
 
-    public Incluir(List<Integer> numeros) {
+    public Remove(List<Integer> numeros) {
         this.numeros = numeros;
     }
 
     @Override
-    public void run() {
-        Random r = new Random();
+    public void run() { // Lógica para remover o primeiro valor da lista
         while (!Thread.currentThread().isInterrupted()) {
             synchronized (numeros) {
-                numeros.add(r.nextInt(1000));
+                if (!numeros.isEmpty()) {
+                    numeros.removeFirst();
+                }
             }
         }
     }

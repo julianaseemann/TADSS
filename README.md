@@ -24,3 +24,4 @@ thread virtual (corountines) - aplicação faz um controle
 ### Decomposição 
     - Decompositar tarefa, verificar se pode fazer ela de forma paralela
 
+Paralelismo e concorrência
