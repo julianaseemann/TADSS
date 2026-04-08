@@ -30,3 +30,13 @@
             System.out.println(contador.count);
         }
     }
+// Soma um e volta para a memória
+
+// Possível solução - Syncronized
+// Alterar 1000 para 10000
+
+// Heap Memória:
+// Processador ULA, cache, clock, Registro
+// Problema foi no cache
+
+// Memoization - guardar um valor ou uma cópia dele
