@@ -1,4 +1,4 @@
-package Exercicio04;
+//package Exercicio04;
 // Faça um programa que crie uma lista (ArrayList) e manipule ela com as seguintes threads:
 
 // Duas threads incluindo valores aleatórios na lista.

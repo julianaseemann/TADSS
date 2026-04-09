@@ -1,4 +1,4 @@
-package Exercicio04;
+//package Exercicio04;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class Exercicio4 {
         Thread.ofPlatform().start(new Incluir(lista));
         Thread.ofPlatform().start(new Incluir(lista));
         Thread.ofPlatform().start(new Remove(lista));
-        Thread.ofPlatform().start(new Imprimir(lista));
+        //Thread.ofPlatform().start(new Imprimir(lista));
         // List<Integer> numeros = new ArrayList<>();
         // Incluir i1 = new Incluir(numeros);
         // Incluir i2 = new Incluir(numeros);

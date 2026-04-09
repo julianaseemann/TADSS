@@ -1,5 +1,7 @@
     public class Exercicio08 {
 
+        // AtomicInteger
+
         int count = 0;
 
         void increment() {
@@ -40,3 +42,11 @@
 // Problema foi no cache
 
 // Memoization - guardar um valor ou uma cópia dele
+
+// volátil da efeito no compilador do java
+// não confiar no cache
+
+// cache coherence protocol - processador ve que está rodando em dois core e aj
+// MESI | MEOSI
+
+// Volatile Volatile 
