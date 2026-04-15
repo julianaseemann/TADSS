@@ -1,4 +1,4 @@
-//package Exercicio06;
+package exercicio06;
 
 public class Lavador implements Runnable {
     private final PilhaPratos sujos;
