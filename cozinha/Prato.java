@@ -1,4 +1,4 @@
-package exercicio06;
+package cozinha;
 
 public class Prato {
     private int id;
@@ -9,16 +9,20 @@ public class Prato {
         this.estado = estado;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Estado getEstado() {
         return estado;
     }
 
     public void setEstado(Estado estado) {
         this.estado = estado;
-    }
-
-    public int getId() {
-        return id;
     }
 
     @Override
