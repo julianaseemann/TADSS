@@ -1,4 +1,4 @@
-package cozinha;
+//package cozinha;
 
 public class Enxugador implements Runnable {
     private PilhaPratos escorredor;

@@ -1,4 +1,4 @@
-package cozinha;
+//package cozinha;
 
 public class Prato {
     private int id;

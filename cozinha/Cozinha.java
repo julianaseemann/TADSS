@@ -1,4 +1,4 @@
-package cozinha;
+//package cozinha;
 
 public class Cozinha {
     public static void main(String[] args) throws Exception {
