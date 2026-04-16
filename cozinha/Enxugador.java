@@ -13,9 +13,12 @@ public class Enxugador implements Runnable {
     public void run() {
         while (limpos.temEspaco()) {
             Prato prato = escorredor.removePrato();
-            System.out.println("Enxugando " + prato);
-            prato.setEstado(Estado.Limpo);
-            limpos.addPrato(prato);
+            if (prato != null) {
+                System.out.println(Thread.currentThread().getName() + " enxugando " + prato);
+                prato.setEstado(Estado.Limpo);
+                limpos.addPrato(prato);
+            }
         }
+        System.out.println(Thread.currentThread().getName() + " terminou");
     }
 }

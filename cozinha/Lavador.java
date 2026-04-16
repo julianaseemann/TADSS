@@ -18,5 +18,7 @@ public class Lavador implements Runnable {
             System.out.println("Lavei prato: " + prato);
             escorredor.addPrato(prato);
         }
+        escorredor.setFim();
+        System.out.println("Lavador terminou");
     }
 }

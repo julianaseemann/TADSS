@@ -14,11 +14,14 @@ public class Cozinha {
         System.out.println(limpos);
 
         Lavador lavador = new Lavador(sujos, escorredor);
-        Thread l1 =Thread.ofPlatform().start(lavador);
+        Thread l1 = Thread.ofPlatform().name("Lavador1").start(lavador);
         Enxugador enxugador = new Enxugador(escorredor, limpos);
-        Thread e1 = Thread.ofPlatform().start(enxugador);
+        Thread e1 = Thread.ofPlatform().name("Enxugador1").start(enxugador);
+        Enxugador enxugador2 = new Enxugador(escorredor, limpos);
+        Thread e2 = Thread.ofPlatform().name("Enxugador2").start(enxugador2);
         l1.join();
         e1.join();
+        e2.join();
         System.out.println(sujos);
         System.out.println(limpos);
     }

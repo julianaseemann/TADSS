@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class PilhaPratos {
     private Prato[] pratos;
     private volatile int qtde;
+    private volatile boolean fim;
 
     public PilhaPratos(int tamanho) {
         pratos = new Prato[tamanho];
@@ -13,7 +14,7 @@ public class PilhaPratos {
     public synchronized void addPrato(Prato prato) {
         while (qtde >= pratos.length) {
             try {
-                System.out.println("Sem espaço, vou esperar");
+                System.out.println(Thread.currentThread().getName() + ": Sem espaço, vou esperar");
                 wait();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -25,19 +26,27 @@ public class PilhaPratos {
     }
 
     public synchronized Prato removePrato() {
-        while (qtde == 0) {
+        while (!fim && qtde == 0) {
             try {
-                System.out.println("Sem pratos, vou esperar");
-                wait();
+                System.out.println(Thread.currentThread().getName() + ": Sem pratos, vou esperar");
+                wait(1000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
-        qtde--;
-        Prato prato = pratos[qtde];
-        pratos[qtde] = null;
         notifyAll();
-        return prato;
+        if (!fim && qtde > 0) {
+            qtde--;
+            Prato prato = pratos[qtde];
+            pratos[qtde] = null;
+            return prato;
+        }
+        return null;
+    }
+
+    public synchronized void setFim() {
+        fim = true;
+        notifyAll();
     }
 
     public boolean temPrato() {
