@@ -2,10 +2,13 @@
 
 package exercicio;
 
-import java.util.List;
-import java.util.ArrayList;
+import redis.clients.jedis.RedisClient;
 
 public class Exercicio04 {
-    List<String> usuarios = new ArrayList<>();
+    public static void main(String[] args) {
+        RedisClient redis = RedisClient.create("redis://localhost:6379");
+        redis.sadd("usuarios:lista", "Juliana","Carlos","Lorenzo");
+        redis.close();
     
+    }
 }
