@@ -25,3 +25,14 @@ thread virtual (corountines) - aplicação faz um controle
     - Decompositar tarefa, verificar se pode fazer ela de forma paralela
 
 Paralelismo e concorrência
+
+
+# 2 Bimestre
+
+o que é um tipo de dado hash
+na vida real é usado serialização
+
+Ler cápitulo no disco virtual
+Serialização de Objetos: "Serializa" o estado do objeto (se quiser que seus obj sejam -> colocar implements)
+estado do objeto -> é o valor  de seus atributos
+byte
