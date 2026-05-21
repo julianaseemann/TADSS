@@ -36,3 +36,7 @@ Ler cápitulo no disco virtual
 Serialização de Objetos: "Serializa" o estado do objeto (se quiser que seus obj sejam -> colocar implements)
 estado do objeto -> é o valor  de seus atributos
 byte
+redis é um banco de memória
+tem a opção de snapshot e/ou AOF
+
+ODM
