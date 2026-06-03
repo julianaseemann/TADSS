@@ -1,0 +1,100 @@
+{
+  "pedido": {
+    "id_pedido": "20250609-001",
+    "data_pedido": "2025-06-09T15:14:02-03:00",
+    "status": "EM_TRANSPORTE",
+    "cliente": {
+      "id_cliente": "CLI-001",
+      "nome": "Maria Silva",
+      "email": "maria.silva@example.com",
+      "telefone": "+55 (47) 98765-4321"
+    },
+    "enderecos": {
+      "entrega": {
+        "rua": "Rua das Palmeiras",
+        "numero": "123",
+        "complemento": "Apartamento 101",
+        "bairro": "Centro",
+        "cidade": "Joinville",
+        "estado": "SC",
+        "cep": "89201-000",
+        "pais": "Brasil",
+        "proximidade": "Supermercado compremuito",
+        "instrucoes": "Deixar na portaria"
+      },
+      "faturamento": {
+        "rua": "Avenida Brasil",
+        "numero": "456",
+        "complemento": "Sala 502",
+        "bairro": "América",
+        "cidade": "Joinville",
+        "estado": "SC",
+        "cep": "89204-000",
+        "pais": "Brasil"
+      }
+    },
+    "transportadora": {
+      "nome": "Correios",
+      "preco": 0.00,
+      "previsao_entrega":"2025-06-16T08:00:00-03:00"
+    },
+    "itens": [
+      {
+        "id_item": "PROD-001",
+        "nome": "Smartphone Modelo X",
+        "quantidade": 2,
+        "preco_unitario": 2500.00,
+        "preco_total": 5000.00
+      },
+      {
+        "id_item": "PROD-002",
+        "nome": "Fone de Ouvido Bluetooth",
+        "quantidade": 1,
+        "preco_unitario": 350.00,
+        "preco_total": 350.00
+      },
+      {
+        "id_item": "PROD-003",
+        "nome": "Capa para Smartphone",
+        "quantidade": 2,
+        "preco_unitario": 50.00,
+        "preco_total": 100.00
+      },
+      {
+        "id_item": "PROD-004",
+        "nome": "Carregador Portátil",
+        "quantidade": 1,
+        "preco_unitario": 120.00,
+        "preco_total": 120.00
+      },
+      {
+        "id_item": "PROD-005",
+        "nome": "Película de Proteção",
+        "quantidade": 2,
+        "preco_unitario": 30.00,
+        "desconto": 10.00,
+        "preco_total": 50.00
+      }
+    ],
+    "subtotal": 5620.00,
+    "tributos": [
+      {
+        "nome_tributo": "ICMS",
+        "percentual": 0.17,
+        "valor": 957.10
+      },
+      {
+        "nome_tributo": "PIS",
+        "percentual": 0.0065,
+        "valor": 36.60
+      },
+      {
+        "nome_tributo": "COFINS",
+        "percentual": 0.03,
+        "valor": 168.90
+      }
+    ],
+    "total_tributos": 1162.60,
+    "total_pedido": 6782.60
+  }
+}

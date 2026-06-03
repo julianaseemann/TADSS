@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exemplo.com/PedidoSchema.json",
+  "title": "Schema de Pedido",
+  "type": "object",
+  "required": ["pedido"],
+  "additionalProperties": false,
+  "properties": {
+    "pedido": {
+      "type": "object",
+      "required": [
+        "id_pedido",
+        "data_pedido",
+        "status",
+        "cliente",
+        "enderecos",
+        "transportadora",
+        "itens",
+        "subtotal",
+        "tributos",
+        "total_tributos",
+        "total_pedido"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id_pedido": {
+          "type": "string"
+        },
+        "data_pedido": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string"
+        },
+        "cliente": {
+          "type": "object",
+          "required": [
+            "id_cliente",
+            "nome",
+            "email",
+            "telefone"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id_cliente": {
+              "type": "string"
+            },
+            "nome": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "telefone": {
+              "type": "string"
+            }
+          }
+        },
+        "enderecos": {
+          "type": "object",
+          "required": [
+            "entrega",
+            "faturamento"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "entrega": {
+              "$ref": "#/$defs/enderecoEntrega"
+            },
+            "faturamento": {
+              "$ref": "#/$defs/enderecoFaturamento"
+            }
+          }
+        },
+        "transportadora": {
+          "type": "object",
+          "required": [
+            "nome",
+            "preco",
+            "previsao_entrega"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "nome": {
+              "type": "string"
+            },
+            "preco": {
+              "type": "number"
+            },
+            "previsao_entrega": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "itens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        },
+        "subtotal": {
+          "type": "number"
+        },
+        "tributos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tributo"
+          }
+        },
+        "total_tributos": {
+          "type": "number"
+        },
+        "total_pedido": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "enderecoEntrega": {
+      "type": "object",
+      "required": [
+        "rua",
+        "numero",
+        "complemento",
+        "bairro",
+        "cidade",
+        "estado",
+        "cep",
+        "pais",
+        "proximidade",
+        "instrucoes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rua": { "type": "string" },
+        "numero": { "type": "string" },
+        "complemento": { "type": "string" },
+        "bairro": { "type": "string" },
+        "cidade": { "type": "string" },
+        "estado": { "type": "string" },
+        "cep": { "type": "string" },
+        "pais": { "type": "string" },
+        "proximidade": { "type": "string" },
+        "instrucoes": { "type": "string" }
+      }
+    },
+    "enderecoFaturamento": {
+      "type": "object",
+      "required": [
+        "rua",
+        "numero",
+        "complemento",
+        "bairro",
+        "cidade",
+        "estado",
+        "cep",
+        "pais"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rua": { "type": "string" },
+        "numero": { "type": "string" },
+        "complemento": { "type": "string" },
+        "bairro": { "type": "string" },
+        "cidade": { "type": "string" },
+        "estado": { "type": "string" },
+        "cep": { "type": "string" },
+        "pais": { "type": "string" }
+      }
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "id_item",
+        "nome",
+        "quantidade",
+        "preco_unitario",
+        "preco_total"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id_item": {
+          "type": "string"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "quantidade": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "preco_unitario": {
+          "type": "number",
+          "minimum": 0
+        },
+        "desconto": {
+          "type": "number",
+          "minimum": 0
+        },
+        "preco_total": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "tributo": {
+      "type": "object",
+      "required": [
+        "nome_tributo",
+        "percentual",
+        "valor"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nome_tributo": {
+          "type": "string"
+        },
+        "percentual": {
+          "type": "number",
+          "minimum": 0
+        },
+        "valor": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}
